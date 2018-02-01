@@ -5,9 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeltagerListe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" Background="#222">
+        Title="MainWindow" Height="500" Width="700" Background="#222">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="277" Margin="10,34,0,0" VerticalAlignment="Top" Width="498" SelectionChanged="ListBox_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFEEEEEE"/>
-        <Label Content="Fornavn&#x9;&#x9;&#x9;Efternavn&#x9;&#x9;Studienummer&#x9;E-mail adresse" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="498" Height="19" Foreground="#FFEEEEEE" Padding="5,0,5,5" FontWeight="Bold"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+                Content="Fornavn&#x9;&#x9;&#x9;Efternavn&#x9;&#x9;Studienummer&#x9;E-mail adresse" 
+                Margin="10,1,9.6,1.2" 
+                Foreground="#FFEEEEEE" 
+                Padding="5,0,5,5" 
+                FontWeight="Bold"/>
+
+        <ListBox 
+            HorizontalAlignment="Left" 
+            Margin="10,0,0,1.2" 
+            Width="674" 
+            Background="{x:Null}" 
+            BorderBrush="{x:Null}" 
+            Foreground="#FFEEEEEE"
+            Name="ListBox" Height="4" VerticalAlignment="Bottom"/>
+
     </Grid>
 </Window>

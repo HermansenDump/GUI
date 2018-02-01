@@ -1,6 +1,6 @@
 Student id;Name;AU id;Email;Role;Available;Origin
-;Poul Ejnar Rovsing;au443291;per@ase.au.dk;INSTRUCTOR;Yes;
-;Tine Fredsø Mortensen;au137188;tfm@au.dk;INSTRUCTOR;Yes;Manually Added
+ ;Poul Ejnar Rovsing;au443291;per@ase.au.dk;INSTRUCTOR;Yes;
+ ;Tine Fredsø Mortensen;au137188;tfm@au.dk;INSTRUCTOR;Yes;Manually Added
 201370537;Michael Møller Kloock;au501989;201370537@post.au.dk;STUDENT;Yes;
 201310514;Kasper Rieder;au506144;201310514@post.au.dk;STUDENT;Yes;
 201408237;Morten Bildsøe;au518273;201408237@post.au.dk;STUDENT;Yes;
