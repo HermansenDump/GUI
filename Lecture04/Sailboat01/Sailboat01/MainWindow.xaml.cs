@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Sailboat02.Models;
+using Sailboat01.Models;
 
-namespace Sailboat02
+namespace Sailboat01
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -79,6 +79,18 @@ namespace Sailboat02
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(_sb.Name))
+            {
+                MessageBox.Show("The name of the ship is " + _sb.Name);
+            }
+            else
+            {
+                MessageBox.Show("The ship doesn't have a name yet!");
             }
         }
     }
