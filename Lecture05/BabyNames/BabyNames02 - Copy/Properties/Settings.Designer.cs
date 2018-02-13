@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BabyNames2.Properties
+namespace BabyNames02.Properties
 {
 
 

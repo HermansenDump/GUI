@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SIO = System.IO;
 
 namespace BabyNames
 {
@@ -23,6 +24,28 @@ namespace BabyNames
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += new RoutedEventHandler(MainWindow_Loaded);
+        }
+
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            string filename = SIO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "babynames.txt");
+            SIO.StreamReader reader = null;
+
+            try
+            {
+                reader = new SIO.StreamReader(filename);
+                {
+                    for (int i = 0; i < 10; ++i)
+                    {
+                        LstDecadeTopNames.Items.Add(reader.ReadLine());
+                    }
+                }
+            }
+            finally
+            {
+                reader?.Close();
+            }
         }
     }
 }

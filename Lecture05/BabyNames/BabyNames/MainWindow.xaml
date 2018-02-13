@@ -6,7 +6,22 @@
         xmlns:local="clr-namespace:BabyNames"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <StackPanel Orientation="Vertical">
+        <ListBox Name="LstDecadeTopNames">
 
-    </Grid>
+        </ListBox>
+        <!--<StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label>Decades</Label>
+                <ListBox Height="Auto" MinHeight="50" Width="Auto"/>
+            </StackPanel>
+            <StackPanel>
+                <Label>Top 10 baby names in selected decade</Label>
+                <ListBox Height="Auto" MinHeight="50" Width="Auto"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ListBox Height="Auto" MinHeight="50" Width="Auto"/>
+        </StackPanel>-->
+    </StackPanel>
 </Window>
