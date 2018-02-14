@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BabyNames03"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="413.455" Width="500">
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal" Margin="10">
             <StackPanel Orientation="Vertical" Margin="5">
@@ -31,15 +31,89 @@
                 </ListBox>
             </StackPanel>
         </StackPanel>
-        <GroupBox>
+        <GroupBox Header="Search">
             <Grid Name="GridSearch">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200*"></ColumnDefinition>
-                    <ColumnDefinition Width="200*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Grid.Row></Grid.Row>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0"
+                       Grid.Row="0">
+                    Name
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Grid.Row="0"
+                         MinWidth="50" />
+
+                <Button Grid.Column="1"
+                        Grid.Row="1">
+                    Search
+                </Button>
+
+                <StackPanel Grid.Column="1"
+                            Grid.Row="2"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Label>
+                        Average Ranking
+                    </Label>
+                    <TextBox MinWidth="25">
+
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                            Grid.Row="3"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Label>
+                        Trend
+                    </Label>
+                    <TextBox MinWidth="25">
+
+                    </TextBox>
+                </StackPanel>
+                <Grid Grid.Column="2"
+                      Grid.RowSpan="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Grid.Column="0"
+                           Grid.Row="0">
+                        Year
+                    </Label>
+                    
+                    <Label Grid.Column="1"
+                           Grid.Row="0">
+                        Ranking
+                    </Label>
+                    
+                    <ListBox Grid.ColumnSpan="2"
+                             Grid.Row="1">
+
+                    </ListBox>
+                </Grid>
+
             </Grid>
         </GroupBox>
     </StackPanel>
 
 </Window>
+
+
+
