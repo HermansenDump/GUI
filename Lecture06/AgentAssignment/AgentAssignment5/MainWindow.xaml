@@ -5,26 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgentAssignment5"
         Title="MainWindow" Height="250" Width="525">
-
-    <Window.Resources>
-        <local:Agents x:Key="Agents" />
-    </Window.Resources>
     <Window.DataContext>
         <local:Agents />
     </Window.DataContext>
-    <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close"
-                        Executed="CloseCommand_OnExecuted" />
-    </Window.CommandBindings>
-
     <DockPanel x:Name="DockPanelMain">
         <!-- Menu -->
         <Menu DockPanel.Dock="Top"
               x:Name="MainMenu">
             <MenuItem Header="_File">
-                <MenuItem Header="E_xit"
-                          x:Name="MenuItemExit"
-                          Command="Close"></MenuItem>
+                <MenuItem Header="_New" Command="{Binding NewFileCommand}"></MenuItem>
+                <MenuItem Header="_Open" Command="{Binding OpenFileCommand}" CommandParameter="{Binding ElementName=TextBoxFileName, Path=Text}"></MenuItem>
+                <MenuItem Header="_Save" Command="{Binding SaveCommand}"></MenuItem>
+                <MenuItem Header="Save _As" Command="{Binding SaveAsCommand}"  CommandParameter="{Binding ElementName=TextBoxFileName, Path=Text}"></MenuItem>
+                <MenuItem Header="E_xit" Command="{Binding CloseAppCommand}"></MenuItem>
             </MenuItem>
             <MenuItem Header="_Agents">
                 <MenuItem Header="_Previous" Command="{Binding PreviusCommand}" />
@@ -64,10 +57,23 @@
                     Content="-"
                     Foreground="White"
                     Command="{Binding DeleteCommand}" />
+            <!-- FileName -->
+            <Label x:Name="FileNameLabel"
+                   FontSize="12"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   Target="{Binding ElementName=TextBoxFileName}">
+                _File Name:
+            </Label>
+            <TextBox x:Name="TextBoxFileName"
+                     FontSize="12"
+                     VerticalAlignment="Center"
+                     VerticalContentAlignment="Center">
+            </TextBox>
         </ToolBar>
 
         <!-- Main View -->
-        <Grid Margin="5">
+        <Grid Name="AgentGrid" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="0.7*" />
@@ -78,6 +84,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
 
             <!-- Label -->
@@ -137,6 +145,7 @@
                      VerticalScrollBarVisibility="Auto"
                      Text="{Binding Path=Assignment}">
             </TextBox>
+
             <!-- ListBox -->
             <ListBox x:Name="AgentsListBox"
                      ItemsSource="{Binding}"
