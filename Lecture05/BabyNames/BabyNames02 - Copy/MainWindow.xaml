@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BabyNames03"
         mc:Ignorable="d"
-        Title="MainWindow" Height="413.455" Width="500">
+        Title="MainWindow" Height="500" Width="500">
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal" Margin="10">
             <StackPanel Orientation="Vertical" Margin="5">
@@ -39,51 +39,73 @@
                     <ColumnDefinition Width="50*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="26"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0"
-                       Grid.Row="0">
+                <TextBlock Grid.Column="0"
+                       Grid.Row="1"
+                       Margin="5">
                     Name
-                </Label>
+                </TextBlock>
 
-                <TextBox Grid.Column="1"
-                         Grid.Row="0"
-                         MinWidth="50" />
+                <TextBox x:Name="TextBoxName"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         MinWidth="50"
+                         Margin="5"/>
 
-                <Button Grid.Column="1"
-                        Grid.Row="1">
+                <Button x:Name="BtnSearch"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Margin="5">
                     Search
                 </Button>
 
+                <TextBlock x:Name="TextBlockSearchError"
+                       Grid.Column="1"
+                       Grid.Row="3"
+                       FontWeight="Bold"
+                       Foreground="Red"
+                       VerticalAlignment="Center" />
+
                 <StackPanel Grid.Column="1"
-                            Grid.Row="2"
+                            Grid.Row="4"
                             Orientation="Horizontal"
-                            HorizontalAlignment="Center">
-                    <Label>
+                            HorizontalAlignment="Center"
+                            Margin="5">
+                    <TextBlock Margin="5">
                         Average Ranking
-                    </Label>
-                    <TextBox MinWidth="25">
+                    </TextBlock>
+                    <TextBox x:Name="TextBoxAverage"
+                             MinWidth="25"
+                             Margin="5"
+                             IsReadOnly="True">
 
                     </TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1"
-                            Grid.Row="3"
+                            Grid.Row="5"
                             Orientation="Horizontal"
-                            HorizontalAlignment="Center">
-                    <Label>
+                            HorizontalAlignment="Center"
+                            Margin="5">
+                    <TextBlock Margin="5">
                         Trend
-                    </Label>
-                    <TextBox MinWidth="25">
+                    </TextBlock>
+                    <TextBox x:Name="TextBoxTrend"
+                             MinWidth="25"
+                             Margin="5"
+                             IsReadOnly="True">
 
                     </TextBox>
                 </StackPanel>
                 <Grid Grid.Column="2"
-                      Grid.RowSpan="4">
+                      Grid.Row="0" Grid.RowSpan="6">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -92,19 +114,21 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    
+
                     <Label Grid.Column="0"
                            Grid.Row="0">
                         Year
                     </Label>
-                    
+
                     <Label Grid.Column="1"
                            Grid.Row="0">
                         Ranking
                     </Label>
-                    
-                    <ListBox Grid.ColumnSpan="2"
-                             Grid.Row="1">
+
+                    <ListBox x:Name="NamesRanking" Grid.ColumnSpan="2"
+                             Grid.Column="0"
+                             Grid.Row="1"
+                             Margin="0 5 5 5">
 
                     </ListBox>
                 </Grid>
@@ -114,6 +138,10 @@
     </StackPanel>
 
 </Window>
+
+
+
+
 
 
 

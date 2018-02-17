@@ -30,6 +30,57 @@ namespace BabyNames03
             InitializeComponent();
             Loaded += new RoutedEventHandler(MainWindow_Loaded);
             LstDecade.SelectionChanged += new SelectionChangedEventHandler(LstDecade_SelectionChanged);
+            BtnSearch.Click += new RoutedEventHandler(Search);
+        }
+
+        private void Search(object sender, RoutedEventArgs e)
+        {
+            string name = TextBoxName.Text;
+
+            // search through collection
+
+            int i;
+            for (i = 0; i < _namesCollection.Count; ++i)
+            {
+                if (_namesCollection[i].Name == name)
+                {
+                    break;
+                }
+            }
+
+            if (-1 < i && i < _namesCollection.Count)
+            {
+                TextBlockSearchError.Text = "";
+                BabyName theName = _namesCollection[i];
+                TextBoxAverage.Text = theName.AverageRank().ToString();
+
+                if (theName.Trend() > 0)
+                {
+                    TextBoxTrend.Text = "More popular";
+                }
+                else if (theName.Trend() == 0)
+                {
+                    TextBoxTrend.Text = "Inconclusive";
+                }
+                else
+                {
+                    TextBoxTrend.Text = "Less popular";
+                }
+
+                NamesRanking.Items.Clear();
+                for (int year = 1900; year < 2001; year += 10)
+                {
+                    int rank = theName.Rank(year);
+                    NamesRanking.Items.Add($"{year:####}   {rank:####}");
+                }
+            }
+            else
+            {
+                TextBlockSearchError.Text = "Name not found";
+                TextBoxAverage.Text = "";
+                TextBoxTrend.Text = "";
+                NamesRanking.Items.Clear();
+            }
         }
 
         private void LstDecade_SelectionChanged(object sender, SelectionChangedEventArgs e)
