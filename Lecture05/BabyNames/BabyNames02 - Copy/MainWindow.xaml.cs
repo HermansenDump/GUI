@@ -124,5 +124,30 @@ namespace BabyNames03
                 }
             }
         }
+
+        private void MenuItemExit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MenuItemSmallFont_OnClick(object sender, RoutedEventArgs e)
+        {
+            FontSize = 8;
+        }
+
+        private void MenuItemNormalFont_OnClick(object sender, RoutedEventArgs e)
+        {
+            FontSize = 12;
+        }
+
+        private void MenuItemLargeFont_OnClick(object sender, RoutedEventArgs e)
+        {
+            FontSize = 18;
+        }
+
+        private void MenuItemVeryLargeFont_OnClick(object sender, RoutedEventArgs e)
+        {
+            FontSize = 40;
+        }
     }
 }

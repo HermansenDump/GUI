@@ -6,136 +6,149 @@
         xmlns:local="clr-namespace:BabyNames03"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <StackPanel Orientation="Vertical" Margin="5">
-                <Label>Decades</Label>
-                <ListBox Name="LstDecade" Height="200">
-                    <ListBoxItem>1900</ListBoxItem>
-                    <ListBoxItem>1910</ListBoxItem>
-                    <ListBoxItem>1920</ListBoxItem>
-                    <ListBoxItem>1930</ListBoxItem>
-                    <ListBoxItem>1940</ListBoxItem>
-                    <ListBoxItem>1950</ListBoxItem>
-                    <ListBoxItem>1960</ListBoxItem>
-                    <ListBoxItem>1970</ListBoxItem>
-                    <ListBoxItem>1980</ListBoxItem>
-                    <ListBoxItem>1990</ListBoxItem>
-                    <ListBoxItem>2000</ListBoxItem>
-                    <ListBoxItem />
-                </ListBox>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="5" Width="300">
-                <Label>Top 10 Baby names in selected decade</Label>
-                <ListBox Name="LstDecadeTopNames" Height="200">
-                </ListBox>
-            </StackPanel>
-        </StackPanel>
-        <GroupBox Header="Search">
-            <Grid Name="GridSearch">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="50*"></ColumnDefinition>
-                    <ColumnDefinition Width="50*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition MinHeight="26"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Column="0"
-                       Grid.Row="1"
-                       Margin="5">
-                    Name
-                </TextBlock>
-
-                <TextBox x:Name="TextBoxName"
-                         Grid.Column="1"
-                         Grid.Row="1"
-                         MinWidth="50"
-                         Margin="5"/>
-
-                <Button x:Name="BtnSearch"
-                        Grid.Column="1"
-                        Grid.Row="2"
-                        Margin="5">
-                    Search
-                </Button>
-
-                <TextBlock x:Name="TextBlockSearchError"
-                       Grid.Column="1"
-                       Grid.Row="3"
-                       FontWeight="Bold"
-                       Foreground="Red"
-                       VerticalAlignment="Center" />
-
-                <StackPanel Grid.Column="1"
-                            Grid.Row="4"
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="5">
-                    <TextBlock Margin="5">
-                        Average Ranking
-                    </TextBlock>
-                    <TextBox x:Name="TextBoxAverage"
-                             MinWidth="25"
-                             Margin="5"
-                             IsReadOnly="True">
-
-                    </TextBox>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" Click="MenuItemExit_OnClick"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Font">
+                <MenuItem Header="_Small" Click="MenuItemSmallFont_OnClick"></MenuItem>
+                <MenuItem Header="_Normal" Click="MenuItemNormalFont_OnClick"></MenuItem>
+                <MenuItem Header="_Large" Click="MenuItemLargeFont_OnClick"></MenuItem>
+                <MenuItem Header="_Very Large" Click="MenuItemVeryLargeFont_OnClick"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <Label>Decades</Label>
+                    <ListBox Name="LstDecade" Height="200">
+                        <ListBoxItem>1900</ListBoxItem>
+                        <ListBoxItem>1910</ListBoxItem>
+                        <ListBoxItem>1920</ListBoxItem>
+                        <ListBoxItem>1930</ListBoxItem>
+                        <ListBoxItem>1940</ListBoxItem>
+                        <ListBoxItem>1950</ListBoxItem>
+                        <ListBoxItem>1960</ListBoxItem>
+                        <ListBoxItem>1970</ListBoxItem>
+                        <ListBoxItem>1980</ListBoxItem>
+                        <ListBoxItem>1990</ListBoxItem>
+                        <ListBoxItem>2000</ListBoxItem>
+                        <ListBoxItem />
+                    </ListBox>
                 </StackPanel>
-
-                <StackPanel Grid.Column="1"
-                            Grid.Row="5"
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="5">
-                    <TextBlock Margin="5">
-                        Trend
-                    </TextBlock>
-                    <TextBox x:Name="TextBoxTrend"
-                             MinWidth="25"
-                             Margin="5"
-                             IsReadOnly="True">
-
-                    </TextBox>
+                <StackPanel Orientation="Vertical" Margin="5" Width="300">
+                    <Label>Top 10 Baby names in selected decade</Label>
+                    <ListBox Name="LstDecadeTopNames" Height="200">
+                    </ListBox>
                 </StackPanel>
-                <Grid Grid.Column="2"
-                      Grid.Row="0" Grid.RowSpan="6">
+            </StackPanel>
+            <GroupBox Header="Search">
+                <Grid Name="GridSearch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition MinHeight="26"></RowDefinition>
                         <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition />
+                        <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Column="0"
-                           Grid.Row="0">
-                        Year
-                    </Label>
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="1"
+                               Margin="5">
+                        Name
+                    </TextBlock>
 
-                    <Label Grid.Column="1"
-                           Grid.Row="0">
-                        Ranking
-                    </Label>
-
-                    <ListBox x:Name="NamesRanking" Grid.ColumnSpan="2"
-                             Grid.Column="0"
+                    <TextBox x:Name="TextBoxName"
+                             Grid.Column="1"
                              Grid.Row="1"
-                             Margin="0 5 5 5">
+                             MinWidth="50"
+                             Margin="5" />
 
-                    </ListBox>
+                    <Button x:Name="BtnSearch"
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            Margin="5">
+                        Search
+                    </Button>
+
+                    <TextBlock x:Name="TextBlockSearchError"
+                               Grid.Column="1"
+                               Grid.Row="3"
+                               FontWeight="Bold"
+                               Foreground="Red"
+                               VerticalAlignment="Center" />
+
+                    <StackPanel Grid.Column="1"
+                                Grid.Row="4"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="5">
+                        <TextBlock Margin="5">
+                            Average Ranking
+                        </TextBlock>
+                        <TextBox x:Name="TextBoxAverage"
+                                 MinWidth="25"
+                                 Margin="5"
+                                 IsReadOnly="True">
+
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"
+                                Grid.Row="5"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="5">
+                        <TextBlock Margin="5">
+                            Trend
+                        </TextBlock>
+                        <TextBox x:Name="TextBoxTrend"
+                                 MinWidth="25"
+                                 Margin="5"
+                                 IsReadOnly="True">
+
+                        </TextBox>
+                    </StackPanel>
+                    <Grid Grid.Column="2"
+                          Grid.Row="0" Grid.RowSpan="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0"
+                               Grid.Row="0">
+                            Year
+                        </Label>
+
+                        <Label Grid.Column="1"
+                               Grid.Row="0">
+                            Ranking
+                        </Label>
+
+                        <ListBox x:Name="NamesRanking" Grid.ColumnSpan="2"
+                                 Grid.Column="0"
+                                 Grid.Row="1"
+                                 Margin="0 5 5 5">
+
+                        </ListBox>
+                    </Grid>
+
                 </Grid>
-
-            </Grid>
-        </GroupBox>
-    </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </DockPanel>
 
 </Window>
 
