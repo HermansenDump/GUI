@@ -20,20 +20,36 @@ namespace AgentAssignment3
     /// </summary>
     public partial class MainWindow : Window
     {
-        Agents _agents = new Agents();
-
         public MainWindow()
         {
             InitializeComponent();
-            _agents.Add(new Agent()
+            LeftArrowButton.Click += new RoutedEventHandler(LeftArrowButton_OnClick);
+            RightArrowButton.Click += new RoutedEventHandler(RightArrowButton_OnClick);
+            AddNewButton.Click += new RoutedEventHandler(AddNewButton_OnClick);
+        }
+
+        private void LeftArrowButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (AgentsListBox.SelectedIndex > 0)
             {
-                ID = "001",
-                CodeName = "Nina",
-                Speciality = "Assassination",
-                Assignment = "UpperVolta"
-            });
-            _agents.Add(new Agent("007", "James Bond", "Martinis", "North Korea"));
-            AgentGrid.DataContext = _agents;
+                AgentsListBox.SelectedIndex--;
+            }
+        }
+
+        private void RightArrowButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (AgentsListBox.SelectedIndex < AgentsListBox.Items.Count)
+            {
+                AgentsListBox.SelectedIndex++;
+            }
+        }
+
+        private void AddNewButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Agents agents = (Agents) this.FindResource("Agents");
+            agents.Add(new Agent());
+            AgentsListBox.SelectedIndex = AgentsListBox.Items.Count - 1;
+            IdTextBox.Focus();
         }
     }
 }

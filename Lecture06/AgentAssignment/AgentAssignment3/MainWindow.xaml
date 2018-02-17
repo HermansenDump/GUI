@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgentAssignment3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="525">
-    <Grid x:Name="AgentGrid" Margin="5">
+        Title="MainWindow" Height="250" Width="525">
+    <Window.Resources>
+        <local:Agents x:Key="Agents" />
+    </Window.Resources>
+    <Grid x:Name="AgentGrid"
+          DataContext="{StaticResource Agents}"
+          Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="0.7*"/>
@@ -16,7 +21,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Label -->
@@ -74,7 +81,37 @@
                  Margin="5"
                  Text="{Binding Assignment}">
         </TextBox>
-
+        <!-- Buttons Left & Right -->
+        <Grid x:Name="ArrowsGrid"
+              Grid.Column="1"
+              Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!-- Previous Agent Button -->
+            <Button x:Name="LeftArrowButton"
+                    Margin="5"
+                    Click="LeftArrowButton_OnClick"
+                    Content="&lt;"
+                    Grid.Column="0">
+            </Button>
+            <!-- Next Agent Button -->
+            <Button x:Name="RightArrowButton"
+                    Margin="5"
+                    Click="RightArrowButton_OnClick"
+                    Content="&gt;"
+                    Grid.Column="1">
+            </Button>
+        </Grid>
+        <!-- Add new button -->
+        <Button x:Name="AddNewButton"
+                Grid.Column="1"
+                Grid.Row="5"
+                Margin="5"
+                Content="Add New"
+                Click="AddNewButton_OnClick">
+        </Button>
         <!-- ListBox -->
         <ListBox x:Name="AgentsListBox"
                  ItemsSource="{Binding}"
@@ -83,9 +120,8 @@
                  Margin="5"
                  Grid.Column="2"
                  Grid.Row="0"
-                 Grid.RowSpan="4">
+                 Grid.RowSpan="6">
         </ListBox>
-
-
     </Grid>
 </Window>
+

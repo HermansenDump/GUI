@@ -35,5 +35,7 @@ namespace AgentAssignment2
             _agents.Add(new Agent("007", "James Bond", "Martinis", "North Korea"));
             AgentGrid.DataContext = _agents;
         }
+
+
     }
 }
