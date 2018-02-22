@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59FB8C9D-1EDF-42DB-B507-C3648D17DF52}"
+	ProjectSection(SolutionItems) = preProject
+		06 AgentAssignment2.pdf = 06 AgentAssignment2.pdf
+		Kommentarer.pdf = Kommentarer.pdf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1", "Lab1\Lab1.csproj", "{B9CC9704-EA07-4734-8CD1-10002C6A304C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "Lab2\Lab2.csproj", "{46F962FD-FFF4-4B5A-B88E-389D1B806E28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{1F7C01BB-DEBC-476B-9072-ACABF3C2A9F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4", "Lab4\Lab4.csproj", "{0D341AE9-D69A-4255-B940-ACD9EC899A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5", "Lab5\Lab5.csproj", "{9AE1D851-82C7-49B4-B011-5DE6E1BA9649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab6", "Lab6\Lab6.csproj", "{2F08EBB9-0789-471E-B4FA-2DF47378B98F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab7", "Lab7\Lab7.csproj", "{C75F865B-F653-4B43-AEFD-DF4206FE7A7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9CC9704-EA07-4734-8CD1-10002C6A304C}.Debug|x86.ActiveCfg = Debug|x86
+		{B9CC9704-EA07-4734-8CD1-10002C6A304C}.Debug|x86.Build.0 = Debug|x86
+		{B9CC9704-EA07-4734-8CD1-10002C6A304C}.Release|x86.ActiveCfg = Release|x86
+		{B9CC9704-EA07-4734-8CD1-10002C6A304C}.Release|x86.Build.0 = Release|x86
+		{46F962FD-FFF4-4B5A-B88E-389D1B806E28}.Debug|x86.ActiveCfg = Debug|x86
+		{46F962FD-FFF4-4B5A-B88E-389D1B806E28}.Debug|x86.Build.0 = Debug|x86
+		{46F962FD-FFF4-4B5A-B88E-389D1B806E28}.Release|x86.ActiveCfg = Release|x86
+		{46F962FD-FFF4-4B5A-B88E-389D1B806E28}.Release|x86.Build.0 = Release|x86
+		{1F7C01BB-DEBC-476B-9072-ACABF3C2A9F5}.Debug|x86.ActiveCfg = Debug|x86
+		{1F7C01BB-DEBC-476B-9072-ACABF3C2A9F5}.Debug|x86.Build.0 = Debug|x86
+		{1F7C01BB-DEBC-476B-9072-ACABF3C2A9F5}.Release|x86.ActiveCfg = Release|x86
+		{1F7C01BB-DEBC-476B-9072-ACABF3C2A9F5}.Release|x86.Build.0 = Release|x86
+		{0D341AE9-D69A-4255-B940-ACD9EC899A7C}.Debug|x86.ActiveCfg = Debug|x86
+		{0D341AE9-D69A-4255-B940-ACD9EC899A7C}.Debug|x86.Build.0 = Debug|x86
+		{0D341AE9-D69A-4255-B940-ACD9EC899A7C}.Release|x86.ActiveCfg = Release|x86
+		{0D341AE9-D69A-4255-B940-ACD9EC899A7C}.Release|x86.Build.0 = Release|x86
+		{9AE1D851-82C7-49B4-B011-5DE6E1BA9649}.Debug|x86.ActiveCfg = Debug|x86
+		{9AE1D851-82C7-49B4-B011-5DE6E1BA9649}.Debug|x86.Build.0 = Debug|x86
+		{9AE1D851-82C7-49B4-B011-5DE6E1BA9649}.Release|x86.ActiveCfg = Release|x86
+		{9AE1D851-82C7-49B4-B011-5DE6E1BA9649}.Release|x86.Build.0 = Release|x86
+		{2F08EBB9-0789-471E-B4FA-2DF47378B98F}.Debug|x86.ActiveCfg = Debug|x86
+		{2F08EBB9-0789-471E-B4FA-2DF47378B98F}.Debug|x86.Build.0 = Debug|x86
+		{2F08EBB9-0789-471E-B4FA-2DF47378B98F}.Release|x86.ActiveCfg = Release|x86
+		{2F08EBB9-0789-471E-B4FA-2DF47378B98F}.Release|x86.Build.0 = Release|x86
+		{C75F865B-F653-4B43-AEFD-DF4206FE7A7E}.Debug|x86.ActiveCfg = Debug|x86
+		{C75F865B-F653-4B43-AEFD-DF4206FE7A7E}.Debug|x86.Build.0 = Debug|x86
+		{C75F865B-F653-4B43-AEFD-DF4206FE7A7E}.Release|x86.ActiveCfg = Release|x86
+		{C75F865B-F653-4B43-AEFD-DF4206FE7A7E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {184F682C-0F4B-494D-9FDF-9CDC81216793}
+	EndGlobalSection
+EndGlobal
